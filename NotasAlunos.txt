@@ -1,0 +1,10 @@
+20110001::Jose Antonio Almeida::10,1::10,2::10,3::
+20110002::Manuel da Fonseca Bragança::11,1::11,2::11,3::
+20110003::Antonio Pedro Bruno::12,1::12,2::12,3::
+20110004::Catarina Almeida Graça::13,1::13,2::13,3::
+
+Notas de Alunos Indentada:
+  20110001 :: Jose Antonio Almeida           :: 10,1 :: 10,2 :: 10,3 
+  20110002 :: Manuel da Fonseca Bragança     :: 11,1 :: 11,2 :: 11,3 
+  20110003 :: Antonio Pedro Bruno            :: 12,1 :: 12,2 :: 12,3 
+  20110004 :: Catarina Almeida Graça         :: 13,1 :: 13,2 :: 13,3 
