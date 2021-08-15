@@ -1,0 +1,7 @@
+2021-08-17 :: Deposito de valores :: D :: 224.0€ :: 389.0€
+2021-08-16 :: Compra online :: L :: 125.0€ :: 534.0€
+2021-08-16 :: Transferencia Recebida :: L :: 734.0€ :: -344.0€
+2021-08-15 :: Transferencia Recebida :: L :: 659.0€ :: 659.0€
+2021-08-15 :: Compra no Pingo Doce :: L :: 369.0€ :: 165.0€
+2021-08-15 :: Levantamento no multibanco :: L :: 696.0€ :: -1040.0€
+2021-08-15 :: Levantamento no multibanco :: L :: 51.0€ :: -1091.0€
