@@ -1,7 +1,11 @@
-2021-08-17 :: Deposito de valores :: D :: 224.0€ :: 389.0€
-2021-08-16 :: Compra online :: L :: 125.0€ :: 534.0€
-2021-08-16 :: Transferencia Recebida :: L :: 734.0€ :: -344.0€
-2021-08-15 :: Transferencia Recebida :: L :: 659.0€ :: 659.0€
-2021-08-15 :: Compra no Pingo Doce :: L :: 369.0€ :: 165.0€
-2021-08-15 :: Levantamento no multibanco :: L :: 696.0€ :: -1040.0€
-2021-08-15 :: Levantamento no multibanco :: L :: 51.0€ :: -1091.0€
+Data       :: Descricao                  :: Tipo :: Montante :: Saldo     
+2021-08-17 :: Reembolso Pagamento        :: L    ::  899.00€ ::   899.00€ 
+2021-08-17 :: Deposito de cheque         :: D    ::  375.00€ ::  1274.00€ 
+2021-08-17 :: Compra online              :: L    ::  452.00€ ::  1581.00€ 
+2021-08-17 :: Pagamento bomba Repsol     :: L    ::  949.00€ ::   187.00€ 
+2021-08-17 :: Transferencia Recebida     :: L    ::  227.00€ ::   -40.00€ 
+2021-08-17 :: Deposito de valores        :: D    ::  433.00€ ::   393.00€ 
+2021-08-17 :: Transferencia Efectuada    :: D    ::  658.00€ ::   397.00€ 
+2021-08-16 :: Compra no Pingo Doce       :: L    ::  445.00€ ::  1136.00€ 
+2021-08-15 :: Deposito de cheque         :: D    ::  760.00€ ::  2033.00€ 
+2021-08-15 :: Compra no Continente       :: L    ::  654.00€ ::  -261.00€ 

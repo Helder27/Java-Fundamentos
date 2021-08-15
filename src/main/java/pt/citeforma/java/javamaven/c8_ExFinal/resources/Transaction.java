@@ -10,46 +10,49 @@ public class Transaction {
     private double amount;
     private double balance;
           
-    public static final char euro = '\u20AC';
-    public static final String separator = " :: ";
     
+    
+    // <editor-fold defaultstate="collapsed" desc="Getters"> 
     public String getMovementDate (){
         return movementDate = movementDate;
-    }
-    
-    public void setMovementDate (String movementDate){
-        this.movementDate = movementDate;
     }
     
     public String getMovementDescription (){
         return movementDescription = movementDescription;
     }
     
-    public void setMovementDescription (String movementDescription){
-        this.movementDescription = movementDescription;
-    }
-    
     public char getMovementType (){
         return movementType = movementType;
-    }
-    
-    public void setMovementType (char movementType){
-        this.movementType = movementType;
     }
     
     public double getAmount (){
         return amount = amount;
     }
     
-    public void setAmount (double amount){
-        this.amount = amount;
-    }
-    
     public double getBalance (){
         return balance = balance;
+    }
+    // </editor-fold>
+    
+    // <editor-fold defaultstate="collapsed" desc="Setters">
+    public void setMovementDate (String movementDate){
+        this.movementDate = movementDate;
+    }
+    
+    public void setMovementDescription (String movementDescription){
+        this.movementDescription = movementDescription;
+    }
+    
+    public void setMovementType (char movementType){
+        this.movementType = movementType;
+    }
+    
+    public void setAmount (double amount){
+        this.amount = amount;
     }
     
     public void setBalance (double balance){
         this.balance = balance;
     }
+    // </editor-fold>
 }
