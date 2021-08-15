@@ -13,7 +13,6 @@ public class Ex10LerFicAlunosTexto03 {
     @SuppressWarnings("ConvertToTryWithResources")
     public static void main(String[] args) {
         
-    // Definir arrays que vão receber os dados contidos no ficheiro (4 linhas)
         Locale.setDefault(new Locale("pt","PT"));
     /*
         long numeros[] = new long[4];

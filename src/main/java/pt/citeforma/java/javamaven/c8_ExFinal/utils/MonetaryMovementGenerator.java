@@ -24,6 +24,7 @@ public class MonetaryMovementGenerator {
         
         List<String> list = new ArrayList<>();
         
+        // <editor-fold defaultstate="collapsed" desc="Description List"> 
         list.add("Levantamento no multibanco");
         list.add("Compra no Continente");
         list.add("Deposito de valores");
@@ -35,7 +36,10 @@ public class MonetaryMovementGenerator {
         list.add("Transferencia Recebida");
         list.add("Transferencia Efectuada");
         list.add("Pagamento Restaurante");
-
+        // </editor-fold>
+        
+        // TODO - Ler lista de descricao a partir de um txt
+        
         MonetaryMovementGenerator mov = new MonetaryMovementGenerator();
         String description = mov.getRandomDescription(list);
         
@@ -70,7 +74,8 @@ public class MonetaryMovementGenerator {
                 newAmount = balance + amount;
                 break;
         }
-            
+        
+        // TODO - Fazer verificacao, se negativo nao pode efectuar a transacao
         // if(newAmount < 0) newAmount = 0;
         
         return newAmount;
@@ -88,12 +93,8 @@ public class MonetaryMovementGenerator {
     {
         Random rand = new Random();
         String randomElement = null;
-        
-        //for (int i = 0; i < numberOfElements; i++) {
-            
-            int randomIndex = rand.nextInt(list.size());
-            randomElement = list.get(randomIndex);
-        //}
+        int randomIndex = rand.nextInt(list.size());
+        randomElement = list.get(randomIndex);
         
         return randomElement;
     }
