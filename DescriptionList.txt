@@ -1,0 +1,11 @@
+Levantamento no multibanco
+Compra no Continente
+Deposito de valores
+Deposito de cheque
+Compra no Pingo Doce
+Pagamento bomba Repsol
+Reembolso Pagamento
+Compra online
+Transferencia Recebida
+Transferencia Efectuada
+Pagamento Restaurante

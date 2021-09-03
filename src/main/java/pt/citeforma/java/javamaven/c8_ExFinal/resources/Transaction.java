@@ -1,6 +1,7 @@
 package pt.citeforma.java.javamaven.c8_ExFinal.resources;
 
 import java.util.Date;
+import pt.citeforma.java.javamaven.c8_ExFinal.config.Constants;
 
 public class Transaction {
     
@@ -9,8 +10,6 @@ public class Transaction {
     private char movementType;
     private double amount;
     private double balance;
-          
-    
     
     // <editor-fold defaultstate="collapsed" desc="Getters"> 
     public String getMovementDate (){

@@ -4,6 +4,8 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -20,29 +22,31 @@ public class WriteFile {
             
             int movementNumber = 0;
             double balance = 0;
+            LocalDateTime date = null;
 
             List<Transaction> transactionList = new ArrayList<Transaction>();
             MonetaryMovementGenerator movGen = new MonetaryMovementGenerator();
-            Constants constants = new Constants();
             
-            while(movementNumber < constants.maxTranactionNumber)
+            while(movementNumber < Constants.MAX_TRANSACTION_NUMBER)
             {
                 String description = movGen.descriptionGenerator();
-                char type = movGen.typeAnalyser(description);
+                Constants.movType type = movGen.typeAnalyser(description);
                 double amount = movGen.amountGenerator();
                 
                 if(movementNumber == 0){
+                    date = movGen.movementDateGenerator();
                     balance = amount;
                 }
                 else{
+                    date = date.plusMinutes(movGen.minutesGenerator());
                     balance = movGen.accountBalance(amount, balance, type);
                 }
 
                 Transaction trans = new Transaction();
                 
-                trans.setMovementDate(movGen.movementDateGenerator());
+                trans.setMovementDate(movGen.dateTimeFormatterToString(date));
                 trans.setMovementDescription(description);
-                trans.setMovementType(type);
+                trans.setMovementType(type.getCode());
                 trans.setAmount(Math.round(amount));
                 trans.setBalance(Math.round(balance));
                 
@@ -51,16 +55,12 @@ public class WriteFile {
                 movementNumber++;
             }
             
-            // <editor-fold defaultstate="expanded" desc="Header Writer customized"> 
-            Header header = new Header();
-            
-            output.printf("%-10s :: %-26s :: %-4s :: %-8s :: %-9s %n",
-                            header.getColumnDate(),
-                            header.getColumnDescription(),
-                            header.getColumnMovementType(),
-                            header.getColumnAmount(),
-                            header.getColumnBalance());
-            // </editor-fold>
+            output.printf("%-16s :: %-26s :: %-4s :: %-8s :: %-9s %n",
+                            Header.COLUMN_DATE,
+                            Header.COLUMN_DESCRIPTION,
+                            Header.COLUMN_MOVEMENT_TYPE,
+                            Header.COLUMN_AMOUNT,
+                            Header.COLUMN_BALANCE);
             
             // sort by date descending
             transactionList.sort(Comparator.comparing(Transaction::getMovementDate, Comparator.reverseOrder()));
@@ -69,26 +69,23 @@ public class WriteFile {
                 
                 // <editor-fold defaultstate="collapsed" desc="Traditional writer"> 
                 /*
-                output.println(transaction.getMovementDate() + constants.separator
-                                + transaction.getMovementDescription() + constants.separator
-                                + transaction.getMovementType() + constants.separator
-                                + transaction.getAmount() + constants.euro + constants.separator
-                                + transaction.getBalance() + constants.euro);
+                output.println(transaction.getMovementDate() + Constants.SEPARADOR
+                                + transaction.getMovementDescription() + Constants.SEPARADOR
+                                + transaction.getMovementType() + Constants.SEPARADOR
+                                + transaction.getAmount() + Constants.EURO + Constants.SEPARADOR
+                                + transaction.getBalance() + Constants.EURO);
                 */
                 // </editor-fold>
                 
-                // <editor-fold defaultstate="expanded" desc="Writer customized"> 
-                output.printf("%-10s :: %-26s :: %-4s :: %7.2f%c :: %8.2f%c %n",
+                output.printf("%-16s :: %-26s :: %-4s :: %7.2f%c :: %8.2f%c %n",
                                 transaction.getMovementDate(),
                                 transaction.getMovementDescription(),
                                 transaction.getMovementType(),
                                 transaction.getAmount(), 
-                                constants.euro, 
+                                Constants.EURO, 
                                 transaction.getBalance(), 
-                                constants.euro);
-                // </editor-fold>
+                                Constants.EURO);
             }
-                
             output.close();
             
         } 
